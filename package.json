@@ -4,7 +4,11 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "jest"
+    "test": "jest",
+    "check-before-push": "npm run build && npm test"
+  },
+  "simple-git-hooks": {
+    "pre-push": "npm run check-before-push"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +16,7 @@
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "jest": "^30.0.5",
+    "simple-git-hooks": "^2.13.0",
     "ts-jest": "^29.4.0",
     "typescript": "^5.8.3"
   },
